@@ -6,9 +6,59 @@
     box-sizing: border-box;
 }
 
+:root{
+    --border-color: #fff5;
+    --w-image:500px;
+    --calculate: calc(3/2);
+    --body-bg: #4f8b69;
+    --text: #000;
+}
+
 body{
     font-family: "Poppins", sans-serif;
     margin: 0;
     font-size: 14px;
-    background-color: #4f8b69;
+    background-color: var(--body-bg) ;
+    text-decoration: none;
+    list-style: none;
+}
+
+header{
+    display: grid;
+    grid-template-columns: 80px 1fr calc(var(--w-image) * var(--calculate));
+    grid-template-rows: 80px;
+    position: relative;
+    z-index: 10;
+    border-bottom: 1px solid var(--border-color);
+}
+
+header .logo img{
+    width: 60px;
+    height: 60px;
+}
+
+header .logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header nav a{
+    color:var(--text);
+    text-decoration: none;
+    font-weight: 400;
+}
+
+header nav ul{
+    display: flex;
+    height: 100%;
+    justify-content: end;
+    align-items: center;
+    gap: 22px;
+    list-style: none;
+    padding-left: 30px;
+}
+
+header nav{
+    border-left: 1px solid var(--border-color);
 }
